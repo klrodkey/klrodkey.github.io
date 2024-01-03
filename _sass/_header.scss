@@ -1,7 +1,7 @@
 .site-header {
   min-height: 56px;
   width: $container-width;
-  position: fixed;
+  position: relative;
   background-color: white;
   box-shadow: 0 5px 6px -6px #bbb;
   z-index: 100;
@@ -10,7 +10,7 @@
   .site-header {
     min-height: 56px;
     width: 95vw;
-    position: fixed;
+    position: relative;
     background-color: white;
     box-shadow: 0 5px 6px -6px #bbb;
     z-index: 100;
@@ -35,7 +35,12 @@
 .menu-link {
   padding: 5px 10px;
 }
-
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+  
+}
 /*
   Responsiveness with a dropdown menu
 */

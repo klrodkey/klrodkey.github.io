@@ -2,10 +2,33 @@
 layout: default
 title: Home
 ---
-
+<!--
+<div class="flex-container">
+  <div class="row">
+    <div class="col">
+      test
+    </div>
+    <div class="col">
+      2 of 2 
+    </div>  
+  </div>
+</div>
+-->
 {% for post in paginator.posts %}
   {% include featured-post.html %}
+  <a class="featured-post featured-post true" href="{{ site.github.url }}{{ featured-post.true }}">{{ site.data.settings.featured-post.true }}</a>
+
 {% endfor %}
+<!--
+{%- assign fp = site.posts | where: 'featured-post', true -%}
+{%- for fp in site.posts -%}
+  <a class="featured-post featured-post true" href="{{ site.github.url }}{{ featured-post.true }}">{{ site.data.settings.featured-post.true }}</a>
+
+{%- endfor -%}-->
+
+
+
+
 
 <!-- Pagination links -->
 <div class="pagination">
@@ -19,4 +42,11 @@ title: Home
   {% else %}
     <span class="pagination-button">{{ site.data.settings.pagination.next_page }}</span>
   {% endif %}
+
+  {% assign entries_layout = page.entries_layout | default: 'list' %}
+  <div class="entries-{{ entries_layout }}">
+    {% for post in posts %}
+      {% include archive-single.html type=entries_layout %}
+    {% endfor %}
+
 </div>

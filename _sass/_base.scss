@@ -13,6 +13,12 @@ dl, dd, ol, ul, figure {
   Basic styling
 */
 
+content {
+  grid-column: 2;
+  grid-row: 3;
+  
+}
+
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
